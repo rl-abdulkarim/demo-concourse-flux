@@ -40,19 +40,3 @@ spec:
   selector:
     app: helloworld
   type: ClusterIP
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  namespace: demo-concourse-flux
-  name: helloworld
-  annotations:
-    kubernetes.io/ingress.class: traefik
-spec:
-  rules:
-  - host: demo-concourse-flux.particule.io
-    http:
-      paths:
-      - backend:
-          serviceName: helloworld-svc
-          servicePort: 80
