@@ -28,15 +28,15 @@ spec:
         ports:
         - name: web
           containerPort: 80
-      strategy:
-        canary:
-          steps:
-          - setWeight: 20
-          - pause:
-              duration: "30s"
-          - setWeight: 50
-          - pause:
-              duration: "30s"
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: "30s"
+      - setWeight: 50
+      - pause:
+          duration: "30s"
 ---
 apiVersion: v1
 kind: Service
